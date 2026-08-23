@@ -1,0 +1,1317 @@
+{
+    "dataset": {
+        "name": "Ames Housing",
+        "rows": 1460,
+        "columns": 81,
+        "target": "SalePrice",
+        "identifier": "Id"
+    },
+    "quality": {
+        "row_count": 1460,
+        "columns_count": 81,
+        "duplicate_rows": 0,
+        "duplicate_ids": 0,
+        "missing_target": 0,
+        "constant_columns": []
+    },
+    "missing_values": [
+        {
+            "column": "Id",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "MSSubClass",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "MSZoning",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "LotFrontage",
+            "missing_count": 259,
+            "missing_percentage": 17.74
+        },
+        {
+            "column": "LotArea",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Street",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Alley",
+            "missing_count": 1369,
+            "missing_percentage": 93.77
+        },
+        {
+            "column": "LotShape",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "LandContour",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Utilities",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "LotConfig",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "LandSlope",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Neighborhood",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Condition1",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Condition2",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BldgType",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "HouseStyle",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "OverallQual",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "OverallCond",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "YearBuilt",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "YearRemodAdd",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "RoofStyle",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "RoofMatl",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Exterior1st",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Exterior2nd",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "MasVnrType",
+            "missing_count": 872,
+            "missing_percentage": 59.73
+        },
+        {
+            "column": "MasVnrArea",
+            "missing_count": 8,
+            "missing_percentage": 0.55
+        },
+        {
+            "column": "ExterQual",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "ExterCond",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Foundation",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BsmtQual",
+            "missing_count": 37,
+            "missing_percentage": 2.53
+        },
+        {
+            "column": "BsmtCond",
+            "missing_count": 37,
+            "missing_percentage": 2.53
+        },
+        {
+            "column": "BsmtExposure",
+            "missing_count": 38,
+            "missing_percentage": 2.6
+        },
+        {
+            "column": "BsmtFinType1",
+            "missing_count": 37,
+            "missing_percentage": 2.53
+        },
+        {
+            "column": "BsmtFinSF1",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BsmtFinType2",
+            "missing_count": 38,
+            "missing_percentage": 2.6
+        },
+        {
+            "column": "BsmtFinSF2",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BsmtUnfSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "TotalBsmtSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Heating",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "HeatingQC",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "CentralAir",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Electrical",
+            "missing_count": 1,
+            "missing_percentage": 0.07
+        },
+        {
+            "column": "1stFlrSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "2ndFlrSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "LowQualFinSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "GrLivArea",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BsmtFullBath",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BsmtHalfBath",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "FullBath",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "HalfBath",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "BedroomAbvGr",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "KitchenAbvGr",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "KitchenQual",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "TotRmsAbvGrd",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Functional",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "Fireplaces",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "FireplaceQu",
+            "missing_count": 690,
+            "missing_percentage": 47.26
+        },
+        {
+            "column": "GarageType",
+            "missing_count": 81,
+            "missing_percentage": 5.55
+        },
+        {
+            "column": "GarageYrBlt",
+            "missing_count": 81,
+            "missing_percentage": 5.55
+        },
+        {
+            "column": "GarageFinish",
+            "missing_count": 81,
+            "missing_percentage": 5.55
+        },
+        {
+            "column": "GarageCars",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "GarageArea",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "GarageQual",
+            "missing_count": 81,
+            "missing_percentage": 5.55
+        },
+        {
+            "column": "GarageCond",
+            "missing_count": 81,
+            "missing_percentage": 5.55
+        },
+        {
+            "column": "PavedDrive",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "WoodDeckSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "OpenPorchSF",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "EnclosedPorch",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "3SsnPorch",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "ScreenPorch",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "PoolArea",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "PoolQC",
+            "missing_count": 1453,
+            "missing_percentage": 99.52
+        },
+        {
+            "column": "Fence",
+            "missing_count": 1179,
+            "missing_percentage": 80.75
+        },
+        {
+            "column": "MiscFeature",
+            "missing_count": 1406,
+            "missing_percentage": 96.3
+        },
+        {
+            "column": "MiscVal",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "MoSold",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "YrSold",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "SaleType",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "SaleCondition",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        {
+            "column": "SalePrice",
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        }
+    ],
+    "features": [
+        {
+            "column": "Id",
+            "data_type": "int64",
+            "unique_values": 1460,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1.0,
+            "max": 1460.0,
+            "mean": 730.5,
+            "std": 421.6100093688479
+        },
+        {
+            "column": "MSSubClass",
+            "data_type": "int64",
+            "unique_values": 15,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 20.0,
+            "max": 190.0,
+            "mean": 56.897260273972606,
+            "std": 42.300570993810425
+        },
+        {
+            "column": "MSZoning",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "LotFrontage",
+            "data_type": "float64",
+            "unique_values": 111,
+            "missing_count": 259,
+            "missing_percentage": 17.74,
+            "min": 21.0,
+            "max": 313.0,
+            "mean": 70.04995836802665,
+            "std": 24.284751774483208
+        },
+        {
+            "column": "LotArea",
+            "data_type": "int64",
+            "unique_values": 1073,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1300.0,
+            "max": 215245.0,
+            "mean": 10516.828082191782,
+            "std": 9981.26493237915
+        },
+        {
+            "column": "Street",
+            "data_type": "str",
+            "unique_values": 2,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Alley",
+            "data_type": "str",
+            "unique_values": 3,
+            "missing_count": 1369,
+            "missing_percentage": 93.77,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "LotShape",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "LandContour",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Utilities",
+            "data_type": "str",
+            "unique_values": 2,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "LotConfig",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "LandSlope",
+            "data_type": "str",
+            "unique_values": 3,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Neighborhood",
+            "data_type": "str",
+            "unique_values": 25,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Condition1",
+            "data_type": "str",
+            "unique_values": 9,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Condition2",
+            "data_type": "str",
+            "unique_values": 8,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BldgType",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "HouseStyle",
+            "data_type": "str",
+            "unique_values": 8,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "OverallQual",
+            "data_type": "int64",
+            "unique_values": 10,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1.0,
+            "max": 10.0,
+            "mean": 6.0993150684931505,
+            "std": 1.3829965467415934
+        },
+        {
+            "column": "OverallCond",
+            "data_type": "int64",
+            "unique_values": 9,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1.0,
+            "max": 9.0,
+            "mean": 5.575342465753424,
+            "std": 1.1127993367127316
+        },
+        {
+            "column": "YearBuilt",
+            "data_type": "int64",
+            "unique_values": 112,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1872.0,
+            "max": 2010.0,
+            "mean": 1971.267808219178,
+            "std": 30.202904042525258
+        },
+        {
+            "column": "YearRemodAdd",
+            "data_type": "int64",
+            "unique_values": 61,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1950.0,
+            "max": 2010.0,
+            "mean": 1984.8657534246574,
+            "std": 20.645406807709413
+        },
+        {
+            "column": "RoofStyle",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "RoofMatl",
+            "data_type": "str",
+            "unique_values": 8,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Exterior1st",
+            "data_type": "str",
+            "unique_values": 15,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Exterior2nd",
+            "data_type": "str",
+            "unique_values": 16,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "MasVnrType",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 872,
+            "missing_percentage": 59.73,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "MasVnrArea",
+            "data_type": "float64",
+            "unique_values": 328,
+            "missing_count": 8,
+            "missing_percentage": 0.55,
+            "min": 0.0,
+            "max": 1600.0,
+            "mean": 103.68526170798899,
+            "std": 181.0662065872166
+        },
+        {
+            "column": "ExterQual",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "ExterCond",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Foundation",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtQual",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 37,
+            "missing_percentage": 2.53,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtCond",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 37,
+            "missing_percentage": 2.53,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtExposure",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 38,
+            "missing_percentage": 2.6,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtFinType1",
+            "data_type": "str",
+            "unique_values": 7,
+            "missing_count": 37,
+            "missing_percentage": 2.53,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtFinSF1",
+            "data_type": "int64",
+            "unique_values": 637,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 5644.0,
+            "mean": 443.6397260273973,
+            "std": 456.0980908409277
+        },
+        {
+            "column": "BsmtFinType2",
+            "data_type": "str",
+            "unique_values": 7,
+            "missing_count": 38,
+            "missing_percentage": 2.6,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "BsmtFinSF2",
+            "data_type": "int64",
+            "unique_values": 144,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 1474.0,
+            "mean": 46.54931506849315,
+            "std": 161.31927280654173
+        },
+        {
+            "column": "BsmtUnfSF",
+            "data_type": "int64",
+            "unique_values": 780,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 2336.0,
+            "mean": 567.2404109589041,
+            "std": 441.86695529243417
+        },
+        {
+            "column": "TotalBsmtSF",
+            "data_type": "int64",
+            "unique_values": 721,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 6110.0,
+            "mean": 1057.4294520547944,
+            "std": 438.7053244594708
+        },
+        {
+            "column": "Heating",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "HeatingQC",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "CentralAir",
+            "data_type": "str",
+            "unique_values": 2,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Electrical",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 1,
+            "missing_percentage": 0.07,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "1stFlrSF",
+            "data_type": "int64",
+            "unique_values": 753,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 334.0,
+            "max": 4692.0,
+            "mean": 1162.626712328767,
+            "std": 386.5877380410744
+        },
+        {
+            "column": "2ndFlrSF",
+            "data_type": "int64",
+            "unique_values": 417,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 2065.0,
+            "mean": 346.99246575342465,
+            "std": 436.5284358862568
+        },
+        {
+            "column": "LowQualFinSF",
+            "data_type": "int64",
+            "unique_values": 24,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 572.0,
+            "mean": 5.844520547945206,
+            "std": 48.62308143352019
+        },
+        {
+            "column": "GrLivArea",
+            "data_type": "int64",
+            "unique_values": 861,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 334.0,
+            "max": 5642.0,
+            "mean": 1515.463698630137,
+            "std": 525.4803834232025
+        },
+        {
+            "column": "BsmtFullBath",
+            "data_type": "int64",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 3.0,
+            "mean": 0.42534246575342466,
+            "std": 0.5189106060898065
+        },
+        {
+            "column": "BsmtHalfBath",
+            "data_type": "int64",
+            "unique_values": 3,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 2.0,
+            "mean": 0.057534246575342465,
+            "std": 0.23875264627921178
+        },
+        {
+            "column": "FullBath",
+            "data_type": "int64",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 3.0,
+            "mean": 1.5650684931506849,
+            "std": 0.5509158012954317
+        },
+        {
+            "column": "HalfBath",
+            "data_type": "int64",
+            "unique_values": 3,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 2.0,
+            "mean": 0.38287671232876713,
+            "std": 0.5028853810928914
+        },
+        {
+            "column": "BedroomAbvGr",
+            "data_type": "int64",
+            "unique_values": 8,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 8.0,
+            "mean": 2.8664383561643834,
+            "std": 0.8157780441442284
+        },
+        {
+            "column": "KitchenAbvGr",
+            "data_type": "int64",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 3.0,
+            "mean": 1.0465753424657533,
+            "std": 0.22033819838403068
+        },
+        {
+            "column": "KitchenQual",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "TotRmsAbvGrd",
+            "data_type": "int64",
+            "unique_values": 12,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 2.0,
+            "max": 14.0,
+            "mean": 6.517808219178082,
+            "std": 1.6253932905840505
+        },
+        {
+            "column": "Functional",
+            "data_type": "str",
+            "unique_values": 7,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Fireplaces",
+            "data_type": "int64",
+            "unique_values": 4,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 3.0,
+            "mean": 0.613013698630137,
+            "std": 0.6446663863122295
+        },
+        {
+            "column": "FireplaceQu",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 690,
+            "missing_percentage": 47.26,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "GarageType",
+            "data_type": "str",
+            "unique_values": 7,
+            "missing_count": 81,
+            "missing_percentage": 5.55,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "GarageYrBlt",
+            "data_type": "float64",
+            "unique_values": 98,
+            "missing_count": 81,
+            "missing_percentage": 5.55,
+            "min": 1900.0,
+            "max": 2010.0,
+            "mean": 1978.5061638868744,
+            "std": 24.689724768590242
+        },
+        {
+            "column": "GarageFinish",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 81,
+            "missing_percentage": 5.55,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "GarageCars",
+            "data_type": "int64",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 4.0,
+            "mean": 1.7671232876712328,
+            "std": 0.7473150101111095
+        },
+        {
+            "column": "GarageArea",
+            "data_type": "int64",
+            "unique_values": 441,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 1418.0,
+            "mean": 472.9801369863014,
+            "std": 213.80484145338042
+        },
+        {
+            "column": "GarageQual",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 81,
+            "missing_percentage": 5.55,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "GarageCond",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 81,
+            "missing_percentage": 5.55,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "PavedDrive",
+            "data_type": "str",
+            "unique_values": 3,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "WoodDeckSF",
+            "data_type": "int64",
+            "unique_values": 274,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 857.0,
+            "mean": 94.2445205479452,
+            "std": 125.3387943517241
+        },
+        {
+            "column": "OpenPorchSF",
+            "data_type": "int64",
+            "unique_values": 202,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 547.0,
+            "mean": 46.66027397260274,
+            "std": 66.25602767664971
+        },
+        {
+            "column": "EnclosedPorch",
+            "data_type": "int64",
+            "unique_values": 120,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 552.0,
+            "mean": 21.954109589041096,
+            "std": 61.1191486017286
+        },
+        {
+            "column": "3SsnPorch",
+            "data_type": "int64",
+            "unique_values": 20,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 508.0,
+            "mean": 3.4095890410958902,
+            "std": 29.31733055678188
+        },
+        {
+            "column": "ScreenPorch",
+            "data_type": "int64",
+            "unique_values": 76,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 480.0,
+            "mean": 15.060958904109588,
+            "std": 55.757415281874174
+        },
+        {
+            "column": "PoolArea",
+            "data_type": "int64",
+            "unique_values": 8,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 738.0,
+            "mean": 2.758904109589041,
+            "std": 40.17730694453019
+        },
+        {
+            "column": "PoolQC",
+            "data_type": "str",
+            "unique_values": 4,
+            "missing_count": 1453,
+            "missing_percentage": 99.52,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "Fence",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 1179,
+            "missing_percentage": 80.75,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "MiscFeature",
+            "data_type": "str",
+            "unique_values": 5,
+            "missing_count": 1406,
+            "missing_percentage": 96.3,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "MiscVal",
+            "data_type": "int64",
+            "unique_values": 21,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 0.0,
+            "max": 15500.0,
+            "mean": 43.489041095890414,
+            "std": 496.12302445794415
+        },
+        {
+            "column": "MoSold",
+            "data_type": "int64",
+            "unique_values": 12,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 1.0,
+            "max": 12.0,
+            "mean": 6.321917808219178,
+            "std": 2.7036262083595126
+        },
+        {
+            "column": "YrSold",
+            "data_type": "int64",
+            "unique_values": 5,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 2006.0,
+            "max": 2010.0,
+            "mean": 2007.8157534246575,
+            "std": 1.3280951205521099
+        },
+        {
+            "column": "SaleType",
+            "data_type": "str",
+            "unique_values": 9,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "SaleCondition",
+            "data_type": "str",
+            "unique_values": 6,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": null,
+            "max": null,
+            "mean": null,
+            "std": null
+        },
+        {
+            "column": "SalePrice",
+            "data_type": "int64",
+            "unique_values": 663,
+            "missing_count": 0,
+            "missing_percentage": 0.0,
+            "min": 34900.0,
+            "max": 755000.0,
+            "mean": 180921.19589041095,
+            "std": 79442.50288288662
+        }
+    ]
+}
