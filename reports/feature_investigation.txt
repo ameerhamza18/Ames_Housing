@@ -1,0 +1,154 @@
+AMES HOUSING — FEATURE INVESTIGATION
+================================================================================
+
+FEATURE SEMANTICS
+--------------------------------------------------------------------------------
+Numerical features: 36
+Categorical features: 44
+Semantic categorical features:
+  - MSSubClass
+  - MsSold
+
+MISSING VALUE INVESTIGATION
+--------------------------------------------------------------------------------
+     feature  missing_count  missing_percentage
+      PoolQC           1453               99.52
+ MiscFeature           1406               96.30
+       Alley           1369               93.77
+       Fence           1179               80.75
+  MasVnrType            872               59.73
+ FireplaceQu            690               47.26
+ LotFrontage            259               17.74
+  GarageType             81                5.55
+ GarageYrBlt             81                5.55
+GarageFinish             81                5.55
+  GarageQual             81                5.55
+  GarageCond             81                5.55
+BsmtExposure             38                2.60
+BsmtFinType2             38                2.60
+    BsmtQual             37                2.53
+    BsmtCond             37                2.53
+BsmtFinType1             37                2.53
+  MasVnrArea              8                0.55
+  Electrical              1                0.07
+
+NUMERICAL SKEWNESS
+--------------------------------------------------------------------------------
+      feature  skewness  absolute_skewness
+      MiscVal 24.476794          24.476794
+     PoolArea 14.828374          14.828374
+      LotArea 12.207688          12.207688
+    3SsnPorch 10.304342          10.304342
+ LowQualFinSF  9.011341           9.011341
+ KitchenAbvGr  4.488397           4.488397
+   BsmtFinSF2  4.255261           4.255261
+  ScreenPorch  4.122214           4.122214
+ BsmtHalfBath  4.103403           4.103403
+EnclosedPorch  3.089872           3.089872
+   MasVnrArea  2.669084           2.669084
+  OpenPorchSF  2.364342           2.364342
+  LotFrontage  2.163569           2.163569
+    SalePrice  1.882876           1.882876
+   BsmtFinSF1  1.685503           1.685503
+   WoodDeckSF  1.541376           1.541376
+  TotalBsmtSF  1.524255           1.524255
+     1stFlrSF  1.376757           1.376757
+    GrLivArea  1.366560           1.366560
+    BsmtUnfSF  0.920268           0.920268
+
+NUMERICAL FEATURES vs SALEPRICE
+--------------------------------------------------------------------------------
+     feature  correlation  absolute_correlation
+   SalePrice     1.000000              1.000000
+ OverallQual     0.790982              0.790982
+   GrLivArea     0.708624              0.708624
+  GarageCars     0.640409              0.640409
+  GarageArea     0.623431              0.623431
+ TotalBsmtSF     0.613581              0.613581
+    1stFlrSF     0.605852              0.605852
+    FullBath     0.560664              0.560664
+TotRmsAbvGrd     0.533723              0.533723
+   YearBuilt     0.522897              0.522897
+YearRemodAdd     0.507101              0.507101
+ GarageYrBlt     0.486362              0.486362
+  MasVnrArea     0.477493              0.477493
+  Fireplaces     0.466929              0.466929
+  BsmtFinSF1     0.386420              0.386420
+ LotFrontage     0.351799              0.351799
+  WoodDeckSF     0.324413              0.324413
+    2ndFlrSF     0.319334              0.319334
+ OpenPorchSF     0.315856              0.315856
+    HalfBath     0.284108              0.284108
+
+HIGH FEATURE-FEATURE CORRELATIONS
+--------------------------------------------------------------------------------
+  feature_a    feature_b  absolute_correlation
+ GarageCars   GarageArea                0.8825
+  YearBuilt  GarageYrBlt                0.8257
+  GrLivArea TotRmsAbvGrd                0.8255
+TotalBsmtSF     1stFlrSF                0.8195
+OverallQual    SalePrice                0.7910
+  GrLivArea    SalePrice                0.7086
+
+CATEGORICAL FEATURE CARDINALITY
+--------------------------------------------------------------------------------
+      feature  unique_categories  missing_count
+ Neighborhood                 25              0
+  Exterior2nd                 16              0
+  Exterior1st                 15              0
+   MSSubClass                 15              0
+     SaleType                  9              0
+   Condition1                  9              0
+   HouseStyle                  8              0
+     RoofMatl                  8              0
+   Condition2                  8              0
+   Functional                  7              0
+    RoofStyle                  6              0
+ BsmtFinType1                  6             37
+   GarageType                  6             81
+ BsmtFinType2                  6             38
+      Heating                  6              0
+SaleCondition                  6              0
+   Foundation                  6              0
+   GarageCond                  5             81
+    LotConfig                  5              0
+     BldgType                  5              0
+     MSZoning                  5              0
+   GarageQual                  5             81
+  FireplaceQu                  5            690
+   Electrical                  5              1
+    ExterCond                  5              0
+    HeatingQC                  5              0
+  LandContour                  4              0
+     LotShape                  4              0
+  KitchenQual                  4              0
+        Fence                  4           1179
+  MiscFeature                  4           1406
+     BsmtQual                  4             37
+    ExterQual                  4              0
+     BsmtCond                  4             37
+ BsmtExposure                  4             38
+    LandSlope                  3              0
+       PoolQC                  3           1453
+ GarageFinish                  3             81
+   PavedDrive                  3              0
+   MasVnrType                  3            872
+    Utilities                  2              0
+        Alley                  2           1369
+       Street                  2              0
+   CentralAir                  2              0
+
+TARGET OUTLIER INVESTIGATION
+--------------------------------------------------------------------------------
+q1: 129975.0
+q3: 214000.0
+lower_bound: 3937.5
+upper_bound: 340037.5
+outlier_count: 61
+outlier_percentage: 4.18
+
+TARGET TRANSFORMATION DIAGNOSTIC
+--------------------------------------------------------------------------------
+Original skewness: 1.882876
+log1p skewness: 0.121347
+
