@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen font-sans text-slate-900">
+    <div class="max-w-4xl mx-auto py-12 px-4">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-slate-800 mb-4">🏡 House Price Predictor</h1>
+            <p class="text-lg text-slate-600">Estimate the market value of a residential property using ML</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Controls -->
+            <div class="md:col-span-2 space-y-6">
+                <div class="glass p-6 rounded-2xl shadow-sm">
+                    <h2 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="mr-2">⚙️</span> Key Property Features
+                    </h2>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Overall Quality (1-10)</label>
+                            <input type="number" id="OverallQual" value="7" min="1" max="10" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Year Built</label>
+                            <input type="number" id="YearBuilt" value="2005" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Living Area (sqft)</label>
+                            <input type="number" id="GrLivArea" value="1800" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Total Bathrooms</label>
+                            <input type="number" id="FullBath" value="2" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Garage Capacity (Cars)</label>
+                            <input type="number" id="GarageCars" value="2" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Neighborhood</label>
+                            <select id="Neighborhood" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="CollgCr">CollgCr</option>
+                                <option value="OldTown">OldTown</option>
+                                <option value="NorthAmes">NorthAmes</option>
+                                <option value="Sawgrass">Sawgrass</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <button onclick="setPreset('small')" class="px-4 py-2 text-sm bg-slate-200 hover:bg-slate-300 rounded-full transition">Small Cozy House</button>
+                        <button onclick="setPreset('luxury')" class="px-4 py-2 text-sm bg-slate-200 hover:bg-slate-300 rounded-full transition">Luxury Estate</button>
+                        <button onclick="setPreset('average')" class="px-4 py-2 text-sm bg-slate-200 hover:bg-slate-300 rounded-full transition">Average Family Home</button>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-sm">
+                    <details class="group">
+                        <summary class="text-sm font-semibold text-slate-500 cursor-pointer hover:text-slate-800 transition">
+                            Show All Advanced Features (JSON)
+                        </summary>
+                        <div class="mt-4">
+                            <textarea id="fullJson" class="w-full h-64 p-3 font-mono text-xs border rounded-lg bg-slate-50 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="md:col-span-1">
+                <div class="glass p-8 rounded-2xl shadow-lg text-center sticky top-8">
+                    <h2 class="text-lg font-semibold text-slate-600 mb-2">Estimated Price</h2>
+                    <div id="price-display" class="text-4xl font-black text-blue-600 mb-6">$0.00</div>
+                    <button onclick="predict()" id="predict-btn" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition transform active:scale-95 shadow-md">
+                        Calculate Price ✨
+                    </button>
+                    <div id="status" class="mt-4 text-sm text-slate-500"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const DEFAULT_HOUSE = {
+            "Id": 9999, "MSSubClass": 60, "MSZoning": "RL", "LotFrontage": 70, "LotArea": 8500, "Street": "Pave", "Alley": null, "LotShape": "Reg", "LandContour": "Lvl", "Utilities": "AllPub", "LotConfig": "Inside", "LandSlope": "Gtl", "Neighborhood": "CollgCr", "Condition1": "Norm", "Condition2": "Norm", "BldgType": "1Fam", "HouseStyle": "2Story", "OverallQual": 7, "OverallCond": 5, "YearBuilt": 2005, "YearRemodAdd": 2005, "RoofStyle": "Gable", "RoofMatl": "CompShg", "Exterior1st": "VinylSd", "Exterior2nd": "VinylSd", "MasVnrType": "BrkFace", "MasVnrArea": 100, "ExterQual": "Gd", "ExterCond": "TA", "Foundation": "PConc", "BsmtQual": "Gd", "BsmtCond": "TA", "BsmtExposure": "Gd", "BsmtFinType1": "GLQ", "BsmtFinSF1": 600, "BsmtFinType2": "Unf", "BsmtFinSF2": 0, "BsmtUnfSF": 400, "TotalBsmtSF": 1000, "Heating": "GasA", "HeatingQC": "Ex", "CentralAir": "Y", "Electrical": "SBrkr", "1stFlrSF": 1000, "2ndFlrSF": 800, "LowQualFinSF": 0, "GrLivArea": 1800, "BsmtFullBath": 1, "BsmtHalfBath": 0, "FullBath": 2, "HalfBath": 1, "BedroomAbvGr": 3, "KitchenAbvGr": 1, "KitchenQual": "Gd", "TotRmsAbvGrd": 7, "Functional": "Typ", "Fireplaces": 1, "FireplaceQu": "Gd", "GarageType": "Attchd", "GarageYrBlt": 2005, "GarageFinish": "Fin", "GarageCars": 2, "GarageArea": 500, "GarageQual": "TA", "GarageCond": "TA", "PavedDrive": "Y", "WoodDeckSF": 100, "OpenPorchSF": 50, "EnclosedPorch": 0, "3SsnPorch": 0, "ScreenPorch": 0, "PoolArea": 0, "PoolQC": null, "Fence": null, "MiscFeature": null, "MiscVal": 0, "MoSold": 6, "YrSold": 2008, "SaleType": "WD", "SaleCondition": "Normal"
+        };
+
+        document.getElementById('fullJson').value = JSON.stringify(DEFAULT_HOUSE, null, 2);
+
+        function setPreset(type) {
+            const house = { ...DEFAULT_HOUSE };
+            if (type === 'small') {
+                house.OverallQual = 4; house.GrLivArea = 1100; house.FullBath = 1; house.GarageCars = 1;
+            } else if (type === 'luxury') {
+                house.OverallQual = 9; house.GrLivArea = 3200; house.FullBath = 3; house.GarageCars = 3; house.Neighborhood = 'NorthAmes';
+            } else if (type === 'average') {
+                house.OverallQual = 6; house.GrLivArea = 1600; house.FullBath = 2; house.GarageCars = 2;
+            }
+
+            // Update inputs
+            document.getElementById('OverallQual').value = house.OverallQual;
+            document.getElementById('GrLivArea').value = house.GrLivArea;
+            document.getElementById('FullBath').value = house.FullBath;
+            document.getElementById('GarageCars').value = house.GarageCars;
+            document.getElementById('Neighborhood').value = house.Neighborhood;
+
+            document.getElementById('fullJson').value = JSON.stringify(house, null, 2);
+        }
+
+        async function predict() {
+            const btn = document.getElementById('predict-btn');
+            const status = document.getElementById('status');
+            const priceDisplay = document.getElementById('price-display');
+
+            btn.disabled = true;
+            btn.innerText = "Predicting...";
+            status.innerText = "Contacting ML server...";
+
+            try {
+                const jsonStr = document.getElementById('fullJson').value;
+                let data = JSON.parse(jsonStr);
+
+                // Sync key inputs back to JSON
+                data.OverallQual = parseInt(document.getElementById('OverallQual').value);
+                data.YearBuilt = parseInt(document.getElementById('YearBuilt').value);
+                data.GrLivArea = parseInt(document.getElementById('GrLivArea').value);
+                data.FullBath = parseInt(document.getElementById('FullBath').value);
+                data.GarageCars = parseInt(document.getElementById('GarageCars').value);
+                data.Neighborhood = document.getElementById('Neighborhood').value;
+
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) throw new Error('Prediction failed');
+
+                const result = await response.json();
+                const price = result.predicted_price;
+
+                priceDisplay.innerText = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(price);
+
+                status.innerText = "Prediction successful! ✨";
+            } catch (e) {
+                status.innerText = "Error: " + e.message;
+                priceDisplay.innerText = "$0.00";
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Calculate Price ✨";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Rank,Model,MAE,RMSE,R2
+1,Ridge Regression - Log Target - Alpha 0.01,15919.2,25033.86,0.9183
+2,Linear Regression - Log Target,16095.57,25806.36,0.9132
+3,Linear Regression - Raw Target,20102.59,60821.62,0.5177
