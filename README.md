@@ -58,7 +58,7 @@ Moved beyond raw data by creating synthetically engineered features that correla
 
 ```bash
 # Clone and enter the project
-git clone https://github.com/your-username/house-price-ml.git
+git clone https://github.com/ameerhamza18/Ames_Housing.git
 cd house-price-ml
 
 # Environment setup
@@ -114,6 +114,24 @@ house-price-ml/
 ├── Dockerfile          # Container definition
 └── requirements.txt    # Dependency manifest
 ```
+
+
+# ⚖️ License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+# ⭐ Support
+
+If you found this project useful:
+
+⭐ Star the repository
+
+🐛 Report issues
+
+💡 Suggest new security rules
+
+🤝 Contribute improvements through pull requests
+
 
 ---
 **Developed as a showcase of Machine Learning Engineering (MLE) best practices.**
