@@ -35,13 +35,17 @@ def identify_features(df:pd.DataFrame)-> tuple[list[str], list[str]]:
     categorical_features = (df.select_dtypes(exclude="number").columns.tolist())
 
     if TARGET_COLUMN in numerical_features:
+        numerical_features.remove(TARGET_COLUMN)
+    if ID_COLUMN in numerical_features:
         numerical_features.remove(ID_COLUMN)
     if ID_COLUMN in categorical_features:
         categorical_features.remove(ID_COLUMN)
 
     for column in SEMANTIC_CATEGORICAL_FEATURES:
-        numerical_features.remove(column)
-        categorical_features.append(column)
+        if column in numerical_features:
+            numerical_features.remove(column)
+        if column not in categorical_features:
+            categorical_features.append(column)
 
     return numerical_features, categorical_features
 

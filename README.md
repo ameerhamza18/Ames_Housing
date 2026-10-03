@@ -5,7 +5,8 @@
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4+-F7931E.svg)](https://scikit-learn.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 
-An end-to-end, production-grade machine learning system designed to predict residential house prices. This project demonstrates a complete ML Lifecycle: from raw data exploration and rigorous feature engineering to a containerized API deployment with real-time monitoring.
+## Project Overview
+An end-to-end, production-grade machine learning system designed to predict residential house prices in Ames, Iowa. This project demonstrates a complete ML Lifecycle: from raw data exploration and rigorous feature engineering to a containerized API deployment with real-time monitoring.
 
 ## 🚀 Impact & Performance
 
@@ -40,15 +41,7 @@ Moved beyond raw data by creating synthetically engineered features that correla
 - **Automated Testing**: Pytest suite covering both the feature engineering logic and the API response integrity.
 - **Containerization**: Fully Dockerized architecture ensuring consistency from local development to cloud production.
 
-## 🏗️ System Architecture
-
-`Raw Data` $\rightarrow$ `Feature Engineering` $\rightarrow$ `Lasso/Ridge Regression` $\rightarrow$ `FastAPI` $\rightarrow$ `Web UI`
-
-- **Core ML (`/src`)**: Data cleaning, feature engineering, and model optimization.
-- **Serving Layer (`/api`)**: Loads the serialized `.joblib` model and provides a RESTful interface.
-- **Presentation Layer (`/api/static`)**: A client-side web application for interactive price estimation.
-
-## 🚦 Getting Started
+## 🚦 Getting Started (Environment Setup)
 
 ### Prerequisites
 - Python 3.12+
@@ -71,6 +64,36 @@ python -m api.main
 ```
 
 Visit **[http://localhost:8000](http://localhost:8000)** to interact with the model.
+
+## 🏃 Steps to Train the Model
+
+To train the final Lasso model, you can run the `final_model.py` script:
+
+```bash
+python src/models/final_model.py
+```
+This script will:
+1. Load and validate the dataset.
+2. Perform feature engineering and handle data quality issues.
+3. Apply a log1p transformation to the target variable (`SalePrice`).
+4. Split the data into training and testing sets.
+5. Build a preprocessing and modeling pipeline.
+6. Train the Lasso Regression model on the training set.
+7. Evaluate the model on the test set and output metrics like MAE, RMSE, and R².
+8. Save the final trained model to `models/lasso_house_price_model.joblib`.
+
+
+## 🏗️ System Architecture and Breakdown of the Model Architecture
+
+`Raw Data` $\rightarrow$ `Feature Engineering` $\rightarrow$ `Lasso Regression` $\rightarrow$ `FastAPI` $\rightarrow$ `Web UI`
+
+The core machine learning architecture utilizes a **Scikit-Learn Pipeline** to ensure consistent preprocessing and modeling.
+- **Target Transformation:** We apply a `log1p` transformation to the target variable, `SalePrice`, handling skewness and improving model performance. Predictions are transformed back using `expm1`.
+- **Pipeline:** We use `ColumnTransformer` to handle different types of features.
+    - **Numerical Features:** Processed with a `SimpleImputer` (median strategy) to handle missing values, followed by a `StandardScaler` to normalize features.
+    - **Categorical Features:** Processed with a `SimpleImputer` (constant strategy, filling with "Missing") and then one-hot encoded using `OneHotEncoder`.
+- **Model:** A `Lasso` regression model is trained at the end of the pipeline with a specified `alpha` parameter for regularization. Regularization handles multicollinearity and feature selection effectively.
+- **Evaluation:** Evaluated with MAE, MSE, RMSE, and R2 score on hold-out data.
 
 ## 🐳 Deployment Strategy
 
