@@ -28,6 +28,8 @@ def test_fit_preprocessor_returns_transformer():
         "Id": [1, 2],
         "LotArea": [8000, 9000],
         "Street": ["Pave", "Grvl"],
+        "MSSubClass": [20, 60],
+        "MoSold": [1, 5],
     })
 
     # In a real scenario, we'd drop the target first.
